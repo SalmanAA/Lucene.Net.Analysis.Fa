@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PersianAnalyzer.cs" />
+    <Compile Include="PersianNormalizationFilter.cs" />
+    <Compile Include="PersianNormalizer.cs" />
+    <Compile Include="PersianStemFilter.cs" />
+    <Compile Include="PersianStemmer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PersianStopWords.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
