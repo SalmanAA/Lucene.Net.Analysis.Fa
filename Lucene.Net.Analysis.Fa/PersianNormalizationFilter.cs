@@ -11,7 +11,7 @@ namespace Lucene.Net.Analysis.Fa
             : base(input)
         {
             _normalizer = new PersianNormalizer();
-            _termAtt = (TermAttribute)AddAttribute(typeof(TermAttribute));
+            _termAtt = (TermAttribute)AddAttribute<TermAttribute>();
         }
 
         public override bool IncrementToken()

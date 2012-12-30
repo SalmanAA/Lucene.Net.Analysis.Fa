@@ -10,7 +10,7 @@ namespace Lucene.Net.Analysis.Fa
         public PersianStemFilter(TokenStream input) : base(input)
         {
             _stemmer = new PersianStemmer();
-            _termAttr = (TermAttribute)AddAttribute(typeof(TermAttribute));
+            _termAttr = (TermAttribute)AddAttribute<TermAttribute>();
         }
 
         public override bool IncrementToken()
