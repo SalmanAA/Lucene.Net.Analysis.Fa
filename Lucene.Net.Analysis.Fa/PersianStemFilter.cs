@@ -5,12 +5,12 @@ namespace Lucene.Net.Analysis.Fa
     public sealed class PersianStemFilter : TokenFilter
     {
         private readonly PersianStemmer _stemmer;
-        private readonly TermAttribute _termAttr;
+        private readonly ITermAttribute _termAttr;
 
         public PersianStemFilter(TokenStream input) : base(input)
         {
             _stemmer = new PersianStemmer();
-            _termAttr = (TermAttribute)AddAttribute(typeof(TermAttribute));
+            _termAttr = AddAttribute<ITermAttribute>();
         }
 
         public override bool IncrementToken()

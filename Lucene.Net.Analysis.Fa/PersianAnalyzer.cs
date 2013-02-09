@@ -2,13 +2,14 @@
 using System.IO;
 using Lucene.Net.Analysis.Standard;
 using Version = Lucene.Net.Util.Version;
+using System.Collections.Generic;
 
 namespace Lucene.Net.Analysis.Fa
 {
     public class PersianAnalyzer : Analyzer
     {
         private readonly Version _version;
-        private readonly Hashtable _stoptable = new Hashtable();
+        private readonly HashSet<string> _stoptable = new HashSet<string>();
         public static string DefaultStopwordFile = "PersianStopWords.txt";
 
         public PersianAnalyzer(Version version)
@@ -23,12 +24,12 @@ namespace Lucene.Net.Analysis.Fa
                     while (!reader.EndOfStream)
                     {
                         var word = reader.ReadLine();
-                        if (word != null) _stoptable.Add(word, word);
+                        if (word != null) _stoptable.Add(word);
                     }
                 }
         }
 
-        public PersianAnalyzer(Version version, Hashtable stopWords)
+        public PersianAnalyzer(Version version, HashSet<string> stopWords)
         {
             _version = version;
             _stoptable = stopWords;
